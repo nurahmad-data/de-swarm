@@ -1,19 +1,93 @@
-# API Keys and Secrets
+# ============================================================
+# de-swarm .gitignore
+# ============================================================
+
+# --- API Keys and Secrets (NEVER COMMIT) ---
 .env
 .env.*
+!.env.template
+*.key
+*.pem
+kaggle.json
+hf_token.txt
 
-# Python Virtual Environments
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 .venv/
 venv/
-__pycache__/
-*.pyc
+env/
+ENV/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
-# Massive Files (Models & Databases)
+# --- Massive Files (Models & Databases) ---
 models/
 *.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
 data/*.db
 data/*.sqlite
+data/*.jsonl
+data/*.parquet
 
-# OS Generated Files
+# --- Dataset Generation Artifacts ---
+pass*.jsonl
+eval_results.csv
+eval_report.*
+spider_*.json
+spider_results*.json
+*.log
+wget-log*
+nightly_*.log
+eval.log
+
+# --- HuggingFace Cache ---
+.cache/
+huggingface/
+
+# --- Kaggle ---
+kaggle.json
+*.kaggle
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# --- OS Generated Files ---
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# --- llama.cpp (if cloned into repo) ---
+llama.cpp/
+!llama.cpp/.gitkeep
+
+# --- Test Suite (downloaded separately) ---
+benchmarks/test-suite-sql-eval/database/
+benchmarks/spider_data/database/
+benchmarks/spider_data/*.zip
+benchmarks/*.zip
