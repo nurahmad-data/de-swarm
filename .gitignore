@@ -1,0 +1,19 @@
+# API Keys and Secrets
+.env
+.env.*
+
+# Python Virtual Environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Massive Files (Models & Databases)
+models/
+*.gguf
+data/*.db
+data/*.sqlite
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
